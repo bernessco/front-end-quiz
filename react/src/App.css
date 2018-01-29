@@ -1,3 +1,40 @@
-.App-welcome {
-  text-align: center;
-}
+.app-header {
+  position: relative;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0 15px;
+  position: sticky;
+  justify-content: center;
+  align-items: center; }
+  .app-header__back {
+    position: absolute;
+    left: 15px;
+    background-color: transparent;
+    display: flex;
+    border: 0; }
+
+.app-section {
+  padding: 15px; }
+
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased; }
+
+html, body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  text-align: left;
+  background-color: #fbfbfb; }

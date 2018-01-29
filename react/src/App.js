@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import AppHeader from './containers/HeaderContainer';
+import BrowseView from './containers/BrowseContainer.js';
 
 class App extends Component {
   render() {
     return (
-      <h1 className="App-welcome">Welcome!</h1>
+      <Router>
+        <main className="app-main">
+          <AppHeader title="Browse"/>
+          <Route exact path="/" component={ BrowseView }/>
+        </main>
+      </Router>
     );
   }
 }
