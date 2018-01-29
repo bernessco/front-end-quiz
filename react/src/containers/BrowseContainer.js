@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       onClick: () => {
             dispatch({
                 type: 'CHANGE_TITLE',
-                text: 'lox'
+                text: ':)'
             })
       },
       fetchItems: () => dispatch(fetchItems())
