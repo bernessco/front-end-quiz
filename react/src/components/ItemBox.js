@@ -1,9 +1,16 @@
 
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const ItemBox = ({ item }) => {
     return(
-        <img src={item.image}/>
+        <Link to={{
+            pathname:`/item/${item.id}`,
+            state: {
+                backable: true
+            }
+        }}>
+            <img src={item.image} alt="a"/>
+        </Link>
     )
 }
 

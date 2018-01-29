@@ -1,20 +1,20 @@
-const items = (state = {
-    isFetching: false,
-    items: []
-  }, action) => {
+const item = (state = {
+        isFetching: false,
+        item: {}
+    }, action) => {
     switch (action.type) {
-      case 'REQUEST_ITEMS':
+      case 'REQUEST_ITEM':
         return Object.assign({}, state, {
             isFetching: true
         })
-    case 'RECEIVE_ITEMS':
+    case 'RECEIVE_ITEM':
         return Object.assign({}, state, {
             isFetching: false,
-            items: action.items
+            item: action.item
         })
       default:
         return state
     }
   }
   
-  export default items
+  export default item
