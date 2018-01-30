@@ -38,12 +38,43 @@
 			width: 100%;
 			padding-top: 15px;
 		}
+
 		&-price {
 			flex: 1;
 		}
 
+		&-heart {
+			color: rgb(179, 154, 92);
+			
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		img {
 			width: 100%;
+		}
+	}
+
+	&__button {
+		margin: 0 auto;
+		display: flex;
+		background-color: white;
+		border: 1px solid rgb(188, 168, 115);
+		font-size: 14px;
+		text-transform: uppercase;
+		padding: 10px 50px;
+		border-radius: 20px;
+		color: rgb(179, 154, 92);		
+  		transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+		
+		  &:focus {
+			outline: 0; // I know it's bad todo :))
+		}
+		
+		&:hover {
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			cursor: pointer;
 		}
 	}
 }

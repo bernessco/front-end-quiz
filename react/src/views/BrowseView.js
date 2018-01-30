@@ -21,7 +21,7 @@ class BrowseView extends Component {
                 </div>
 
                 {this.props.items.length < this.props.totalItems && 
-                    <button onClick={ () => this.props.fetchItems() }> Loadmore </button>
+                    <button className="app-item-list__button" onClick={ () => this.props.fetchItems() }> Load more </button>
                 }
             </section>
         )

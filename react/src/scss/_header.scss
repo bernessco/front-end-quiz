@@ -16,9 +16,27 @@
         background-color: transparent;
         display: flex;
         border: 0;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: rgb(179, 154, 92);
+
+        i {
+            vertical-align: bottom;
+        }
+
+        &:focus {
+            outline: 0; // I know it's bad todo :))
+        }
+        
+        &:hover {
+            cursor: pointer
+        }
     }
     
     &__center {
         display: flex;
+        font-size: 24px;
+        font-weight: bold;
     }
 }

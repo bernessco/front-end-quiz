@@ -9,16 +9,19 @@ class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            homeButton: false
+            homeButton: false,
+            backable: false
         }
     }
 
     render() {
         return(
             <header className="app-header">
-                {(this.state.homeButton)
-                    ? <button className="app-header__back" onClick={() => this.context.router.history.push('/')}>Home</button>
-                    : ''
+                {this.state.homeButton &&
+                    <button className="app-header__back" onClick={() => (this.state.backable) ? this.context.router.history.goBack() : this.context.router.history.push('/')}>
+                        <i className="material-icons" aria-hidden="true">keyboard_arrow_left</i>
+                        Home
+                    </button>
                 }
                 <div className="app-header__center">
                     {this.props.image ? <img src={this.props.image} alt={this.props.title}/> : this.props.title}
@@ -32,6 +35,12 @@ class Header extends Component {
             this.setState({homeButton: true})
         }
         this.context.router.history.listen(route => {
+            if (route.state && route.state.fromBrowse) {
+                this.setState({backable: true})
+            } else {
+                this.setState({backable: false})
+            }
+
             if (route.pathname !== '/') {
                 this.setState({homeButton: true})
             } else {
