@@ -14,7 +14,7 @@ class ItemView extends Component {
             {!this.props.isFetching && 
                 <div className="app-item-view">
                     <div className="app-item-view__box app-item-view__image">
-                        <div className="app-item-view__image-heart"> 
+                        <div className="app-item-view__image-heart" onClick={ () => this.props.toogleFavorite(this.props.item.id)}> 
                             { (this.props.favorited)
                                 ? <i className="material-icons" aria-hidden="true">favorite</i>
                                 : <i className="material-icons" aria-hidden="true">favorite_border</i>
