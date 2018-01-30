@@ -28,7 +28,6 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        console.log(this)
         if (this.context.router.route.match.path === '/' && !this.context.router.route.match.isExact) {
             this.setState({homeButton: true})
         }

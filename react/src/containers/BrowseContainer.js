@@ -1,28 +1,28 @@
 import { connect } from 'react-redux'
 import BrowseView from '../views/BrowseView'
-import { fetchItems } from '../store/actions/BrowseActions'
+import { fetchItems, toogleFavorite } from '../store/actions/BrowseActions'
+import { changeTitle } from '../store/actions/HeaderActions'
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-      items: state.BrowseReducer.items || []
-  }
+const mapStateToProps = state => {
+    return {
+        items: state.BrowseReducer.items || [],
+        isFetching: state.BrowseReducer.isFetching || false,
+        totalItems: state.BrowseReducer.totalItems || 0,
+        favorites:  state.BrowseReducer.favorites || {}
+    }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-      onClick: () => {
-            dispatch({
-                type: 'CHANGE_TITLE',
-                text: ':)'
-            })
-      },
-      fetchItems: () => dispatch(fetchItems())
-  }
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchItems: limit => dispatch(fetchItems(limit)),
+        changeHeaderTitle: text => dispatch(changeTitle(text)),
+        toogleFavorite: id => dispatch(toogleFavorite(id))
+    }
 }
 
 const BrowseContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(BrowseView)
 
 export default BrowseContainer

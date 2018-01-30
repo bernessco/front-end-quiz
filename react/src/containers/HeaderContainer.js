@@ -1,20 +1,21 @@
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    title: state.HeaderReducer.text || ownProps.title
-  }
+const mapStateToProps = state => {
+    return {
+        title: state.HeaderReducer.text,
+        image: state.HeaderReducer.image || false
+    }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-  }
+const mapDispatchToProps = dispatch => {
+    return {
+    }
 }
 
 const HeaderContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Header)
 
 export default HeaderContainer

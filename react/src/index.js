@@ -11,16 +11,17 @@ import './App.css';
 import App from './App';
 
 // const loggerMiddleware = createLogger()
-const store = createStore(
+
+const Store = createStore(
     AllReducers,
     applyMiddleware(
-        thunkMiddleware, 
+        thunkMiddleware 
         // loggerMiddleware
     )
 )
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={ Store }>
         <App />
     </Provider>,
     document.getElementById('root')
